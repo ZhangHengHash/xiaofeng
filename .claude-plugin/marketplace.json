@@ -1,0 +1,18 @@
+{
+  "name": "source-understanding-marketplace",
+  "owner": {
+    "name": "zhang666"
+  },
+  "plugins": [
+    {
+      "name": "source-understanding",
+      "description": "吸收专业源码全流程插件：选型(discover) → 吃透(source-understanding 五步法) → 归档(settle)。多 skill + 多 agent + 脚本自动化，引擎外部引用",
+      "source": "./",
+      "skills": [
+        "./skills/discover",
+        "./skills/source-understanding",
+        "./skills/settle"
+      ]
+    }
+  ]
+}

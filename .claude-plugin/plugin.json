@@ -1,0 +1,17 @@
+{
+  "name": "source-understanding",
+  "description": "吸收专业源码全流程插件：选型(discover) → 吃透(source-understanding 五步法) → 归档(settle)。3 skill + 4 agent + 4 脚本，引擎 codebase-memory-mcp 外部引用",
+  "version": "0.2.0",
+  "author": {
+    "name": "zhang666"
+  },
+  "license": "MIT",
+  "keywords": [
+    "code-understanding",
+    "source-code",
+    "codebase-memory-mcp",
+    "workflow",
+    "agent",
+    "五步法"
+  ]
+}
