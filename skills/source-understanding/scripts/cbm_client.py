@@ -40,7 +40,11 @@ def run(tool: str, args: dict | None = None) -> dict:
         )
     args = args or {}
     cmd = [CBM_BIN, "cli", "--json", tool, json.dumps(args, ensure_ascii=False)]
-    p = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace")
+    # cbm-mcp 的 daemon 通信依赖工作目录，必须在引擎所在目录执行
+    p = subprocess.run(
+        cmd, capture_output=True, text=True, encoding="utf-8", errors="replace",
+        cwd=os.path.dirname(CBM_BIN),
+    )
     env = _extract_envelope(p.stdout or "")
     if env is None:
         raise RuntimeError(

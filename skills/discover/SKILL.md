@@ -1,6 +1,6 @@
 ---
 name: discover
-description: 发现并选型要吸收的专业源码项目（搜 GitHub 高星、判断价值、clone）。触发：晓风选型、找高星项目借鉴、选型技术方案、clone 一个 repo 准备吃透、判断某项目值不值得深挖。
+description: Use when 找高星项目借鉴、选型技术方案、判断某项目值不值得深挖、clone 一个 repo 准备吃透。触发：晓风选型、找高星项目、判断值不值得吃透。
 ---
 
 # 源码选型（discover）

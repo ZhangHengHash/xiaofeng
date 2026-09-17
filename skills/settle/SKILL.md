@@ -1,6 +1,6 @@
 ---
 name: settle
-description: 把吃透的源码理解笔记归档进知识库（Obsidian）+ 回填 memory。触发：晓风归档、源码理解完成收尾、把 00-03 笔记沉淀成知识库笔记、回填 clone map 的 file:line 地图。
+description: Use when 源码理解完成收尾、把 00-03 笔记沉淀成知识库笔记、回填 clone map 的 file:line 地图、归档知识库。触发：晓风归档、源码理解收尾、沉淀笔记、回填 memory。
 ---
 
 # 源码归档（settle）

@@ -71,7 +71,7 @@ def main() -> int:
         issues = check_file(p)
         total += len(issues)
         ndim, nfill = count_dimensions(p)
-        dim_msg = f"（维度 {nfill}/{ndim} 已填）" if ndim else ""
+        dim_msg = f"（{nfill} 条结论 / {ndim} 维度）" if ndim else ""
         if issues:
             print(f"X {f}：{len(issues)} 处问题 {dim_msg}")
             for ln, kind, content in issues:
