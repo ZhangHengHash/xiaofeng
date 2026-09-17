@@ -6,7 +6,7 @@
 
 - repo 名：`{repo}`
 - 笔记路径：`{notes}`（00_index / 01_dataflow / 02_dimensions）
-- 知识库目录：`{kb_dir}`（默认 `E:\AI-KB\02_项目\`）
+- 知识库目录：`{kb_dir}`（用户指定，如 Obsidian vault 的项目目录）
 
 ## 任务
 

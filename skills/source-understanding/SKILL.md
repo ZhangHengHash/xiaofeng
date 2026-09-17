@@ -37,8 +37,8 @@ Agent(subagent_type="general-purpose", prompt=agents/dimension-analyzer.md 内�
 
 ## 依赖
 
-- **引擎**：codebase-memory-mcp 预编译 exe（外部，不粘源码）。路径用 `CBM_BIN` 环境变量指定，默认 `E:\agentic_src\cbm-bin\codebase-memory-mcp.exe`。
-- **运行时**：Python 3（本机 `D:\Anaconda\python.exe`）。
+- **引擎**：codebase-memory-mcp 预编译 exe（外部，不粘源码），`CBM_BIN` 环境变量指定（从 https://github.com/DeusData/codebase-memory-mcp 下载）。
+- **运行时**：Python 3。
 
 ## 铁律
 
@@ -50,4 +50,4 @@ Agent(subagent_type="general-purpose", prompt=agents/dimension-analyzer.md 内�
 ## 参考
 
 - 五步法方法论：memory `source-understanding-workflow`
-- 引擎源码理解：`E:\AI-KB\02_项目\12_codebase-memory-mcp源码理解.md`
+- 引擎源码理解：见仓库 README「依赖」

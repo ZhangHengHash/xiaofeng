@@ -1,7 +1,7 @@
 """cbm_client.py — codebase-memory-mcp CLI 调用封装（薄层，引擎外部引用，不粘源码）。
 
 依赖外部引擎 codebase-memory-mcp（预编译 exe），通过 CBM_BIN 环境变量定位。
-默认 E:\\agentic_src\\cbm-bin\\codebase-memory-mcp.exe。
+安装：从 https://github.com/DeusData/codebase-memory-mcp 下载预编译二进制，设 CBM_BIN 指向它。
 """
 from __future__ import annotations
 
@@ -9,7 +9,9 @@ import json
 import os
 import subprocess
 
-CBM_BIN = os.environ.get("CBM_BIN", r"E:\agentic_src\cbm-bin\codebase-memory-mcp.exe")
+CBM_BIN = os.environ.get("CBM_BIN", "")
+if not CBM_BIN:
+    raise RuntimeError("未设置 CBM_BIN，请指向 codebase-memory-mcp 预编译二进制（https://github.com/DeusData/codebase-memory-mcp）")
 
 
 def _extract_envelope(stdout: str):

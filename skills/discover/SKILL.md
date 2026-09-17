@@ -11,7 +11,7 @@ description: Use when 找高星项目借鉴、选型技术方案、判断某项�
 
 1. 派 `agents/discoverer.md` 子代理搜 GitHub（`gh search repos`，关键词多角度）。
 2. 判断：star 实测（`gh api` 为准，不信搜索摘要数字）+ 活跃度（pushedAt）+ 语言 + license + 与需求匹配。
-3. 确认后 clone 到 `E:\agentic_src\<name>`（`--depth 1`）。
+3. 确认后 clone 到本地仓库目录（`--depth 1`）。
 4. 回填 `source-repos-clone-map.md`（memory）。
 
 ## 铁律

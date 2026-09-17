@@ -10,7 +10,7 @@ description: Use when 源码理解完成收尾、把 00-03 笔记沉淀成知识
 ## 流程
 
 1. 跑 `source-understanding/scripts/report.py --repo <名> --notes 00 01 02 --out 最终.md --map` 合并笔记 + 提取 file:line 地图。
-2. 派 `agents/archiver.md` 子代理：按 md-style 规范写 Obsidian 笔记到知识库（默认 `E:\AI-KB\02_项目\`）。
+2. 派 `agents/archiver.md` 子代理：按 md-style 规范写 Obsidian 笔记到知识库（`{kb_dir}`，用户指定）。
 3. 回填 memory：`source-repos-clone-map.md` 的 file:line 地图行 + 相关记忆卡。
 
 ## 铁律
