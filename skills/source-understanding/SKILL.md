@@ -20,20 +20,16 @@ description: Use when 吃透陌生仓库源码、源码级理解、查符号定�
 | 4 验证 | 硬检查 file:line 锚定是否齐全（防脑补） | 脚本 | `python scripts/verify.py 01_dataflow.md 02_dimensions.md` |
 | 5 沉淀 | 合并笔记 + 提取 file:line 地图（回填 memory） | 脚本 | `python scripts/report.py --repo <名> --notes 00 01 02 --out 最终.md --map` |
 
-## 子代理 dispatch（理解密集型子任务）
+## 子任务分工（理解密集型）
 
-第 2、3.5 步是理解密集型，用 `Agent` 工具派**新鲜子代理**独立执行（不继承主会话上下文），主代理只编排 + 汇总：
+第 2、3.5 步是理解密集型，需派**独立子代理**执行（不继承主会话上下文），主代理只编排 + 汇总。子代理的 prompt 用 `agents/` 下模板填充，模板是框架无关的 prompt 文本：
 
-```text
-# 第 2 步：一个模块派一个 deep-reader（可并行 dispatch 多个模块）
-Agent(subagent_type="general-purpose", prompt=agents/deep-reader.md 内容 + 填入 {repo}/{module}/{range})
+- 第 2 步：每个模块派一个 deep-reader，prompt = `agents/deep-reader.md`（填 {repo}/{module}/{range}）
+- 第 3.5 步：每个维度派一个 dimension-analyzer，prompt = `agents/dimension-analyzer.md`（填 {repo}/{dimension}/{how}）
 
-# 第 3.5 步：一个维度派一个 dimension-analyzer（可并行 dispatch 8 个维度）
-Agent(subagent_type="general-purpose", prompt=agents/dimension-analyzer.md 内容 + 填入 {repo}/{dimension}/{how})
-```
-
-- **并行**：同一条消息里多个 Agent 调用 = 并行执行；一条一个 = 串行。
-- **主代理只做**：填 prompt 占位符 → dispatch → 汇总子代理产出 → 跑脚本验证/沉淀。
+- **并行**：多个子任务并行派发。
+- **主代理只做**：填占位符 → 派子代理 → 汇总产出 → 跑脚本。
+- dispatch 机制由宿主 agent 框架决定（Claude Code 用 Agent 工具，其他框架用各自的子任务机制），`agents/*.md` 不绑定任何框架。
 
 ## 依赖
 
